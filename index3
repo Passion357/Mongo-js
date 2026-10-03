@@ -1,0 +1,31 @@
+const { collection } = require("mongodb");
+
+//create the client class
+const MongoClient = require("mongodb").MongoClient
+const url =  "mongodb+srv://Passion:Busola@cluster357.aogvkab.mongodb.net/?retryWrites=true&w=majority"
+connect();
+async function connect(){
+const client = new MongoClient(url);
+    try{
+await client.connect();
+const db= client.db('sample_analytics');
+console.log('connectted '+ db.databaseName)
+// to get the collections
+const collections= await db.collections();
+//collections.forEach(console.log);
+collections.forEach(c=>console.log(c.collectionName) 
+);
+const collectionName = db.collection('accounts');
+console.log(await collectionName.find().toArray());
+
+
+//const Players =db.collections('Players');
+//Players.find()
+    }
+    catch (ex){
+console.error('something happend' + ex)
+    }
+    finally{
+client.close();
+    }
+}

@@ -1,0 +1,17 @@
+[
+    {
+        "name": "Aragon",
+        "location": "New Zealand",
+        "job": "Park Ranger"
+    },
+    {
+        "name": "Frodo",
+        "location": "New Zealand",
+        "job": "Unemployed"
+    },
+    {
+        "name": "Ned Kelly",
+        "location": "Australia",
+        "job": "Outlaw"
+    }
+]
